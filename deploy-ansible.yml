@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  become: true
+  tasks:
+  - name: download the code
+    shell: wget -O ~/app.zip http://18.219.31.103/app.zip 
+  - name: create /app directory
+    shell: mkdir /app
+  - name: copy the code source folder into /app directory
+    shell: unzip ~/app.zip -d /app
+  - name: install depedencies
+    shell: npm install
+  - name: start the application
+    shell: npm start
