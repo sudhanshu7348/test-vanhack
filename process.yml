@@ -1,0 +1,5 @@
+apps:
+  - script   : server.js
+    instances: 2
+    name: pm2-test-app
+    exec_mode: cluster
